@@ -1,28 +1,28 @@
 <!--- app-name: Prometheus -->
 
-# Prometheus packaged by Bitnami
+# Prometheus packaged by Coredge
 
 Prometheus is an open source monitoring and alerting system. It enables sysadmins to monitor their infrastructures by collecting metrics from configured targets at given intervals.
 
 [Overview of Prometheus](https://prometheus.io/)
 
-Trademarks: This software listing is packaged by Bitnami. The respective trademarks mentioned in the offering are owned by the respective companies, and use of them does not imply any affiliation or endorsement.
+Trademarks: This software listing is packaged by Coredge. The respective trademarks mentioned in the offering are owned by the respective companies, and use of them does not imply any affiliation or endorsement.
 
 ## TL;DR
 
 ```console
-helm install my-release oci://registry-1.docker.io/bitnamicharts/prometheus
+helm install my-release oci://registry-1.docker.io/Coredgecharts/prometheus
 ```
 
 ## Introduction
 
-Bitnami charts for Helm are carefully engineered, actively maintained and are the quickest and easiest way to deploy containers on a Kubernetes cluster that are ready to handle production workloads.
+Coredge charts for Helm are carefully engineered, actively maintained and are the quickest and easiest way to deploy containers on a Kubernetes cluster that are ready to handle production workloads.
 
 This chart bootstraps a [Prometheus](https://prometheus.io) Deployment in a [Kubernetes](https://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
-Bitnami charts can be used with [Kubeapps](https://kubeapps.dev/) for deployment and management of Helm Charts in clusters.
+Coredge charts can be used with [Kubeapps](https://kubeapps.dev/) for deployment and management of Helm Charts in clusters.
 
-[Learn more about the default configuration of the chart](https://docs.bitnami.com/kubernetes/infrastructure/prometheus/get-started/).
+[Learn more about the default configuration of the chart](https://docs.Coredge.com/kubernetes/infrastructure/prometheus/get-started/).
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ Bitnami charts can be used with [Kubeapps](https://kubeapps.dev/) for deployment
 To install the chart with the release name `my-release`:
 
 ```console
-helm install my-release oci://registry-1.docker.io/bitnamicharts/prometheus
+helm install my-release oci://registry-1.docker.io/Coredgecharts/prometheus
 ```
 
 The command deploys Prometheus on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.
@@ -86,7 +86,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
 | `alertmanager.enabled`                                         | Alertmanager enabled                                                                                                                                    | `true`                          |
 | `alertmanager.image.registry`                                  | Alertmanager image registry                                                                                                                             | `docker.io`                     |
-| `alertmanager.image.repository`                                | Alertmanager image repository                                                                                                                           | `bitnami/alertmanager`          |
+| `alertmanager.image.repository`                                | Alertmanager image repository                                                                                                                           | `Coredge/alertmanager`          |
 | `alertmanager.image.tag`                                       | Alertmanager image tag (immutable tags are recommended)                                                                                                 | `0.25.0-debian-11-r54`          |
 | `alertmanager.image.digest`                                    | Alertmanager image digest in the way sha256:aa.... Please note this parameter, if set, will override the tag image tag (immutable tags are recommended) | `""`                            |
 | `alertmanager.image.pullPolicy`                                | Alertmanager image pull policy                                                                                                                          | `IfNotPresent`                  |
@@ -187,7 +187,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `alertmanager.service.sessionAffinity`                         | Control where client requests go, to the same pod or round-robin                                                                                        | `None`                          |
 | `alertmanager.service.sessionAffinityConfig`                   | Additional settings for the sessionAffinity                                                                                                             | `{}`                            |
 | `alertmanager.persistence.enabled`                             | Enable Alertmanager data persistence using VolumeClaimTemplates                                                                                         | `false`                         |
-| `alertmanager.persistence.mountPath`                           | Path to mount the volume at.                                                                                                                            | `/bitnami/alertmanager/data`    |
+| `alertmanager.persistence.mountPath`                           | Path to mount the volume at.                                                                                                                            | `/Coredge/alertmanager/data`    |
 | `alertmanager.persistence.subPath`                             | The subdirectory of the volume to mount to, useful in dev environments and one PV for multiple services                                                 | `""`                            |
 | `alertmanager.persistence.storageClass`                        | PVC Storage Class for Concourse worker data volume                                                                                                      | `""`                            |
 | `alertmanager.persistence.accessModes`                         | PVC Access Mode for Concourse worker volume                                                                                                             | `["ReadWriteOnce"]`             |
@@ -200,7 +200,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | Name                                                              | Description                                                                                                                                                                                 | Value                      |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
 | `server.image.registry`                                           | Prometheus image registry                                                                                                                                                                   | `docker.io`                |
-| `server.image.repository`                                         | Prometheus image repository                                                                                                                                                                 | `bitnami/prometheus`       |
+| `server.image.repository`                                         | Prometheus image repository                                                                                                                                                                 | `Coredge/prometheus`       |
 | `server.image.tag`                                                | Prometheus image tag (immutable tags are recommended)                                                                                                                                       | `2.44.0-debian-11-r7`      |
 | `server.image.digest`                                             | Prometheus image digest in the way sha256:aa.... Please note this parameter, if set, will override the tag image tag (immutable tags are recommended)                                       | `""`                       |
 | `server.image.pullPolicy`                                         | Prometheus image pull policy                                                                                                                                                                | `IfNotPresent`             |
@@ -287,7 +287,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `server.externalLabels`                                           | External labels to add to any time series or alerts when communicating with external systems                                                                                                | `{}`                       |
 | `server.thanos.create`                                            | Create a Thanos sidecar container                                                                                                                                                           | `false`                    |
 | `server.thanos.image.registry`                                    | Thanos image registry                                                                                                                                                                       | `docker.io`                |
-| `server.thanos.image.repository`                                  | Thanos image name                                                                                                                                                                           | `bitnami/thanos`           |
+| `server.thanos.image.repository`                                  | Thanos image name                                                                                                                                                                           | `Coredge/thanos`           |
 | `server.thanos.image.tag`                                         | Thanos image tag                                                                                                                                                                            | `0.31.0-scratch-r5`        |
 | `server.thanos.image.digest`                                      | Thanos image digest in the way sha256:aa.... Please note this parameter, if set, will override the tag                                                                                      | `""`                       |
 | `server.thanos.image.pullPolicy`                                  | Thanos image pull policy                                                                                                                                                                    | `IfNotPresent`             |
@@ -371,7 +371,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `server.service.sessionAffinity`                                  | Control where client requests go, to the same pod or round-robin. ClientIP by default.                                                                                                      | `ClientIP`                 |
 | `server.service.sessionAffinityConfig`                            | Additional settings for the sessionAffinity                                                                                                                                                 | `{}`                       |
 | `server.persistence.enabled`                                      | Enable persistence using Persistent Volume Claims. If you have multiple instances (server.repicacount > 1), please considere using an external storage service like Thanos or Grafana Mimir | `false`                    |
-| `server.persistence.mountPath`                                    | Path to mount the volume at.                                                                                                                                                                | `/bitnami/prometheus/data` |
+| `server.persistence.mountPath`                                    | Path to mount the volume at.                                                                                                                                                                | `/Coredge/prometheus/data` |
 | `server.persistence.subPath`                                      | The subdirectory of the volume to mount to, useful in dev environments and one PV for multiple services                                                                                     | `""`                       |
 | `server.persistence.storageClass`                                 | Storage class of backing PVC                                                                                                                                                                | `""`                       |
 | `server.persistence.annotations`                                  | Persistent Volume Claim annotations                                                                                                                                                         | `{}`                       |
@@ -388,11 +388,11 @@ The command removes all the Kubernetes components associated with the chart and 
 | Name                                                   | Description                                                                                     | Value                   |
 | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------- | ----------------------- |
 | `volumePermissions.enabled`                            | Enable init container that changes the owner/group of the PV mount point to `runAsUser:fsGroup` | `false`                 |
-| `volumePermissions.image.registry`                     | Bitnami Shell image registry                                                                    | `docker.io`             |
-| `volumePermissions.image.repository`                   | Bitnami Shell image repository                                                                  | `bitnami/bitnami-shell` |
-| `volumePermissions.image.tag`                          | Bitnami Shell image tag (immutable tags are recommended)                                        | `11-debian-11-r122`     |
-| `volumePermissions.image.pullPolicy`                   | Bitnami Shell image pull policy                                                                 | `IfNotPresent`          |
-| `volumePermissions.image.pullSecrets`                  | Bitnami Shell image pull secrets                                                                | `[]`                    |
+| `volumePermissions.image.registry`                     | Coredge Shell image registry                                                                    | `docker.io`             |
+| `volumePermissions.image.repository`                   | Coredge Shell image repository                                                                  | `Coredge/Coredge-shell` |
+| `volumePermissions.image.tag`                          | Coredge Shell image tag (immutable tags are recommended)                                        | `11-debian-11-r122`     |
+| `volumePermissions.image.pullPolicy`                   | Coredge Shell image pull policy                                                                 | `IfNotPresent`          |
+| `volumePermissions.image.pullSecrets`                  | Coredge Shell image pull secrets                                                                | `[]`                    |
 | `volumePermissions.resources.limits`                   | The resources limits for the init container                                                     | `{}`                    |
 | `volumePermissions.resources.requests`                 | The requested resources for the init container                                                  | `{}`                    |
 | `volumePermissions.containerSecurityContext.runAsUser` | Set init container's Security Context runAsUser                                                 | `0`                     |
@@ -401,7 +401,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 
 ```console
 helm install my-release --set alertmanager.enabled=true \
-  oci://registry-1.docker.io/bitnamicharts/prometheus
+  oci://registry-1.docker.io/Coredgecharts/prometheus
 ```
 
 The above command install Prometheus chart with Alertmanager.
@@ -409,18 +409,18 @@ The above command install Prometheus chart with Alertmanager.
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 ```console
-helm install my-release -f values.yaml oci://registry-1.docker.io/bitnamicharts/prometheus
+helm install my-release -f values.yaml oci://registry-1.docker.io/Coredgecharts/prometheus
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml)
 
 ## Configuration and installation details
 
-### [Rolling VS Immutable tags](https://docs.bitnami.com/containers/how-to/understand-rolling-tags-containers/)
+### [Rolling VS Immutable tags](https://docs.Coredge.com/containers/how-to/understand-rolling-tags-containers/)
 
 It is strongly recommended to use immutable tags in a production environment. This ensures your deployment does not change automatically if the same tag is updated with a different image.
 
-Bitnami will release a new chart updating its containers if a new version of the main container, significant changes, or critical vulnerabilities exist.
+Coredge will release a new chart updating its containers if a new version of the main container, significant changes, or critical vulnerabilities exist.
 
 ### Deploy extra resources
 
@@ -430,11 +430,11 @@ There are cases where you may want to deploy extra objects, such a ConfigMap con
 
 This chart allows you to set your custom affinity using the `XXX.affinity` parameter(s). Find more information about Pod's affinity in the [kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity).
 
-As an alternative, you can use of the preset configurations for pod affinity, pod anti-affinity, and node affinity available at the [bitnami/common](https://github.com/bitnami/charts/tree/main/bitnami/common#affinities) chart. To do so, set the `XXX.podAffinityPreset`, `XXX.podAntiAffinityPreset`, or `XXX.nodeAffinityPreset` parameters.
+As an alternative, you can use of the preset configurations for pod affinity, pod anti-affinity, and node affinity available at the [Coredge/common](https://github.com/Coredge/charts/tree/main/Coredge/common#affinities) chart. To do so, set the `XXX.podAffinityPreset`, `XXX.podAntiAffinityPreset`, or `XXX.nodeAffinityPreset` parameters.
 
 ### Integrate Prometheus and Alertmanager with Thanos
 
-You can integrate Prometheus & Alertmanager with Thanos using this chart and the [Bitnami Thanos chart](https://github.com/bitnami/charts/tree/main/bitnami/thanos) following the steps below:
+You can integrate Prometheus & Alertmanager with Thanos using this chart and the [Coredge Thanos chart](https://github.com/Coredge/charts/tree/main/Coredge/thanos) following the steps below:
 
 > Note: in this example we will use MinIO&reg; (subchart) as the Objstore. Every component will be deployed in the "monitoring" namespace.
 
@@ -494,18 +494,18 @@ kubectl create namespace monitoring
 helm install prometheus \
     --set prometheus.thanos.create=true \
     --namespace monitoring \
-    oci://registry-1.docker.io/bitnamicharts/prometheus
+    oci://registry-1.docker.io/Coredgecharts/prometheus
 helm install thanos \
     --values values.yaml \
     --namespace monitoring \
-    oci://registry-1.docker.io/bitnamicharts/thanos
+    oci://registry-1.docker.io/Coredgecharts/thanos
 ```
 
 That's all! Now you have Thanos fully integrated with Prometheus and Alertmanager.
 
 ### Integrate Prometheus with Grafana Mimir
 
-You can integrate Prometheus with Grafana Mimir using this chart and the [Bitnami Grafana Mimir chart](https://github.com/bitnami/charts/tree/main/bitnami/grafana-mimir) adding a `remoteWrite` entry:
+You can integrate Prometheus with Grafana Mimir using this chart and the [Coredge Grafana Mimir chart](https://github.com/Coredge/charts/tree/main/Coredge/grafana-mimir) adding a `remoteWrite` entry:
 
 - Create a **values.yaml** like the one below for Prometheus:
 
@@ -526,16 +526,16 @@ kubectl create namespace monitoring
 helm install prometheus \
     --values values.yaml \
     --namespace monitoring \
-    oci://registry-1.docker.io/bitnamicharts/prometheus
+    oci://registry-1.docker.io/Coredgecharts/prometheus
 helm install grafana-mimir \
-    oci://registry-1.docker.io/bitnamicharts/grafana-mimir
+    oci://registry-1.docker.io/Coredgecharts/grafana-mimir
 ```
 
 That's all! Now you have Prometheus integrated with Grafana Mimir.
 
 ### Integrate Prometheus with Grafana
 
-You can integrate Prometheus with Grafana Dashboard using this chart and the [Bitnami Grafana chart](https://github.com/bitnami/charts/tree/main/bitnami/grafana) just adding the prometheus datasources:
+You can integrate Prometheus with Grafana Dashboard using this chart and the [Coredge Grafana chart](https://github.com/Coredge/charts/tree/main/Coredge/grafana) just adding the prometheus datasources:
 
 - Create a **values.yaml** like the one below for Grafana:
 
@@ -570,11 +570,11 @@ For Helm 3:
 kubectl create namespace monitoring
 helm install prometheus \
     --namespace monitoring \
-    oci://registry-1.docker.io/bitnamicharts/prometheus
+    oci://registry-1.docker.io/Coredgecharts/prometheus
 helm install grafana-mimir \
     --values values.yaml \
     --namespace monitoring \
-    oci://registry-1.docker.io/bitnamicharts/grafana
+    oci://registry-1.docker.io/Coredgecharts/grafana
 ```
 
 ### How to add new targets
@@ -658,7 +658,7 @@ server:
 
 ## Troubleshooting
 
-Find more information about how to deal with common errors related to Bitnami's Helm charts in [this troubleshooting guide](https://docs.bitnami.com/general/how-to/troubleshoot-helm-chart-issues).
+Find more information about how to deal with common errors related to Coredge's Helm charts in [this troubleshooting guide](https://docs.Coredge.com/general/how-to/troubleshoot-helm-chart-issues).
 
 ## License
 
